@@ -30,7 +30,7 @@ client = MedianaSMSClient(api_key="your_api_key")
 # Send SMS
 response = client.send_sms(
     sending_number="989982009183",
-    recipients=["09100040029"],
+    recipients=["09100000000"],
     message_text="Hello from SDK"
 )
 
@@ -47,7 +47,7 @@ async def main():
     async with AsyncMedianaSMSClient("your_api_key") as client:
         # Send pattern SMS
         response = await client.send_pattern(
-            recipients=["09100040029"],
+            recipients=["09100000000"],
             pattern_code="welcome_pattern",
             parameters={"name": "John"}
         )
@@ -109,6 +109,3 @@ See complete examples in the `examples/` directory:
 2. [Send Pattern SMS](examples/send_pattern.py)
 3. [Check Status](examples/check_status.py)
 4. [Async Usage](examples/async_example.py)
-
-```
-```
