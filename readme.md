@@ -1,4 +1,9 @@
+
+```
 # Mediana SMS Python SDK
+
+[![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A modern Python SDK for the Mediana SMS API with both synchronous and asynchronous support.
 
@@ -14,9 +19,13 @@ A modern Python SDK for the Mediana SMS API with both synchronous and asynchrono
 
 ```bash
 pip install mediana-sms-sdk
+```
 
-#Quick Start
+## Quick Start
 
+### Synchronous Client
+
+```python
 from mediana_sms import MedianaSMSClient
 
 # Initialize client
@@ -30,9 +39,11 @@ response = client.send_sms(
 )
 
 print("Message ID:", response["requestId"])
+```
 
-#Asynchronous Client
+### Asynchronous Client
 
+```python
 import asyncio
 from mediana_sms import AsyncMedianaSMSClient
 
@@ -47,10 +58,13 @@ async def main():
         print("Pattern sent:", response)
 
 asyncio.run(main())
+```
 
-#API Reference
-#Synchronous Methods
+## API Reference
 
+### Synchronous Methods
+
+```python
 client.send_sms(
     sending_number: str,
     recipients: List[str],
@@ -64,18 +78,23 @@ client.send_pattern(
 ) -> Dict
 
 client.get_status(request_id: int) -> RequestStatus
+```
 
-#Asynchronous Methods
-#Same methods as synchronous client but prefixed with await:
+### Asynchronous Methods
 
+Same methods as synchronous client but prefixed with `await`:
+
+```python
 await async_client.send_sms(...)
 await async_client.send_pattern(...)
 await async_client.get_status(...)
+```
 
-#Error Handling
-#The SDK provides specific exception types:
+## Error Handling
 
+The SDK provides specific exception types:
 
+```python
 try:
     client.send_sms(...)
 except AuthenticationError:
@@ -84,6 +103,16 @@ except APIError as e:
     print(f"API Error: {e} (Status: {e.status_code})")
 except ValidationError:
     print("Invalid input parameters")
+```
 
-#Examples
-#See complete examples in the examples/ directory:
+## Examples
+
+See complete examples in the `examples/` directory:
+
+1. [Send SMS](examples/send_sms.py)
+2. [Send Pattern SMS](examples/send_pattern.py)
+3. [Check Status](examples/check_status.py)
+4. [Async Usage](examples/async_example.py)
+
+```
+```
