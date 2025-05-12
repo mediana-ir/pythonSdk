@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mediana-sms-sdk"
+version = "0.1.0"
+description = "Python SDK for Mediana SMS API"
+authors = [{name = "mediana", email = "mediana@info.com"}]
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.25.0",
+    "aiohttp>=3.8.0",
+    "pydantic>=1.9.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/mediana-ir/pythonSdk"
